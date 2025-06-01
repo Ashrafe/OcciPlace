@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# VSCode
+.vscode/
+
+# Environnement virtuel
+env/
+ENV/
+venv/
+.venv/
+
+# Fichiers/Dossiers Django
+db.sqlite3
+/media/
+/staticfiles/
+
+# Fichiers systèmes
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Autres
+*.env
