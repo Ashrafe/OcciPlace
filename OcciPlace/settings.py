@@ -37,6 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Apps du projet OcciPlace
+    'accounts',
+    'products',
+    'orders',
+    'wishlist',
+    'notifications',
+    'loyalty',
+    #'blog',
 ]
 
 MIDDLEWARE = [
