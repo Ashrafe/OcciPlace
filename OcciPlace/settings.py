@@ -63,7 +63,7 @@ ROOT_URLCONF = 'OcciPlace.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # <- CHEMIN DES TEMPLATES GLOBAUX
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,7 +123,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/',
+STATIC_URL = 'static/'
+MEDIA_URL = '/media/'  # URL publique pour accéder aux fichiers uploadés
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # Dossier où Django va chercher les fichiers statiques personnalisés (CSS, JS, images)
@@ -133,7 +134,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"  # Dossier où Django va collecter les st
 
 # settings.py
 
-MEDIA_URL = '/media/'  # URL publique pour accéder aux fichiers uploadés
 
 MEDIA_ROOT = BASE_DIR / "media"  # Dossier où sont stockés les fichiers uploadés
 

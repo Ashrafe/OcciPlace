@@ -20,6 +20,13 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+from . import views  # <-- ajouter en haut, pour importer votre vue home
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
@@ -28,6 +35,16 @@ urlpatterns = [
 
 urlpatterns = [
     # ... vos autres urls ici ...
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),       # Gestion utilisateurs
+    path('products/', include('products.urls')),       # Catalogue produits
+    path('orders/', include('orders.urls')),           # Commandes
+    path('wishlist/', include('wishlist.urls')),       # Wishlist
+    path('notifications/', include('notifications.urls')), # Notifications
+    path('loyalty/', include('loyalty.urls')),         # Fidélité
+    
+    path('', views.home, name='home'),   # Page d'accueil du site (URL racine)
+
 ]
 
 if settings.DEBUG:

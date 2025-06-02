@@ -1,0 +1,27 @@
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}OcciPlace{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block extra_head %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>OcciPlace</h1>
+        <!-- Menu de navigation, etc. -->
+    </header>
+    <main>
+        {% block content %}
+        <!-- Contenu spécifique à chaque page -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 OcciPlace. Tous droits réservés.</p>
+    </footer>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
